@@ -73,8 +73,8 @@ def generate_rsa_keys(bits):
     return (e, n), (d, n)
 
 def main():
-    print("Absolute RSA System")
-    
+    print("--Absolute RSA System--")
+
     try:
         key_choice = input("Generate keys? (y/n): ").lower()
         if key_choice == 'y':
@@ -84,21 +84,21 @@ def main():
             print(f"Public (e,n): {public}")
             print(f"Private (d,n): {private}")
         else:
-            e = int(input("e: "))
-            n = int(input("n: "))
-            d = int(input("d: "))
+            e = int(input("e (public key): "))
+            n = int(input("n(modulus): "))
+            d = int(input("d(private key): "))
             public, private = (e, n), (d, n)
         
         message = input("Message: ")
         
         ciphertext = rsa_encrypt(message, *public)
-        print(f"\n🔒 Encrypted: {ciphertext}")
+        print(f"\n Encrypted: {ciphertext}")
         
         plaintext = rsa_decrypt(ciphertext, *private)
-        print(f"🔓 Decrypted: {plaintext}")
+        print(f" Decrypted: {plaintext}")
     
     except Exception as e:
-        print(f"\n❌ Error: {type(e).__name__}: {e}")
+        print(f"\n Error: {type(e).__name__}: {e}")
 
 if __name__ == "__main__":
     main()
