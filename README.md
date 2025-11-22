@@ -8,7 +8,8 @@ Features
 - Interactive command-line interface.
 
 
-Warning
+!!Warning!!
+
   For educational use only! Standard RSA key sizes (2048-bit+) are recommended for security.
 
 License
