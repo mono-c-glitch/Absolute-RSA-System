@@ -73,13 +73,12 @@ def generate_rsa_keys(bits):
     return (e, n), (d, n)
 
 def main():
-    print("🔐 Absolute RSA System (Any modulus)")
+    print("Absolute RSA System")
     
     try:
         key_choice = input("Generate keys? (y/n): ").lower()
         if key_choice == 'y':
-            bits = int(input("Key size (8-16384): ")) # Minimum mathematicaly supported modulus size is 8
-
+            bits = int(input("Key size (in bits) (8-16384): ")) # Minimum mathematicaly supported modulus size is 8
 
             public, private = generate_rsa_keys(bits)
             print(f"Public (e,n): {public}")
@@ -103,8 +102,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-while True:
-    user_input = input (". ")
-    if user_input.lower() == "exit" :
-
-        break     
